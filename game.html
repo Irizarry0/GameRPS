@@ -8,14 +8,128 @@
 </head>
 <body>
     <script>
-        console.log("hello");
-        function computerPlay(playerSelection, computerSelection){
-            string("You Lose! Paper beats Rock")
+     
+        let pScore = 0;
+        
+        function computerPlay(){
+            let randNum= Math.ceil(Math.random()*3);
+            if(randNum==1){
+                return "ROCK";
+            }
+            if(randNum == 2){
+                return "PAPER"
+            }
+            if(randNum == 3){
+                return "SCISSORS"
+            }
+        }
+             
+      
+  
+        
+    
+        function singleRound(playerChoice, computerChoice){
+            if (computerChoice==playerChoice){
+               return `Draw: ${playerChoice} vs ${computerChoice}`;
+            }
+            if (playerChoice=='ROCK' && computerChoice == "SCISSORS"){
+                pScore += 100;
+                return `Player Wins: ${playerChoice} vs ${computerChoice}`;
+                
+            }
+            if (playerChoice=='ROCK' && computerChoice == "PAPER"){
+                pScore -= 100;
+                return `Player Loses: ${playerChoice} vs ${computerChoice}`;
+                     
+            }
+            if (playerChoice=='PAPER' && computerChoice == "ROCK"){
+                pScore += 100;
+                return `Player Wins: ${playerChoice} vs ${computerChoice}`;
+                      
+            }
+            if (playerChoice=='PAPER' && computerChoice == "SCISSORS"){
+                pScore-= 100;
+                return `Player Loses: ${playerChoice} vs ${computerChoice}`;
+                      
+            }
+            if (playerChoice=='SCISSORS' && computerChoice == "ROCK"){
+                pScore-= 100;
+                return `Player Loses: ${playerChoice} vs ${computerChoice}`;
+                      
+            }
+            if (playerChoice=='SCISSORS' && computerChoice == "PAPER"){
+                pScore += 100;
+                return `Player Wins: ${playerChoice} vs ${computerChoice}`;
+                      
+            }
+        }
+             
+        function gamePlay(){
+            console.log("Round 1 Begin");
+            let playerDecision = prompt("Choose between rock paper or scissors").toUpperCase();
+            let computerDescision = computerPlay();
+            let round = singleRound(playerDecision,computerDescision);       
+            console.log(`Round 1 Results: ${round} Score: ${pScore}`);
+
+            console.log("Round 2 Begin");
+            playerDecision = prompt("Choose between rock paper or scissors").toUpperCase();
+            computerDescision = computerPlay();
+            round = singleRound(playerDecision,computerDescision);       
+            console.log(`Round 2 Results: ${round} Score: ${pScore}`);
+
+            console.log("Round 3 Begin");
+            playerDecision = prompt("Choose between rock paper or scissors").toUpperCase();
+            computerDescision = computerPlay();
+            round = singleRound(playerDecision,computerDescision);       
+            console.log(`Round 3 Results: ${round} Score: ${pScore}`);
+
+            console.log("Round 4 Begin");
+            playerDecision = prompt("Choose between rock paper or scissors").toUpperCase();
+            computerDescision = computerPlay();
+            round = singleRound(playerDecision,computerDescision);       
+            console.log(`Round 4 Results: ${round} Score: ${pScore}`);
+
+            console.log("Round 5 Begin");
+            playerDecision = prompt("Choose between rock paper or scissors").toUpperCase();
+            computerDescision = computerPlay();
+            round = singleRound(playerDecision,computerDescision);       
+            console.log(`Round 5 Results: ${round} Score: ${pScore}`);
+
+            console.log("Round 6 Begin");
+            playerDecision = prompt("Choose between rock paper or scissors").toUpperCase();
+            computerDescision = computerPlay();
+            round = singleRound(playerDecision,computerDescision);       
+            console.log(`Round 6 Results: ${round} Score: ${pScore}`);
+
+            console.log("Round 7 Begin");
+            playerDecision = prompt("Choose between rock paper or scissors").toUpperCase();
+            computerDescision = computerPlay();
+            round = singleRound(playerDecision,computerDescision);       
+            console.log(`Round 7 Results: ${round} Score: ${pScore}`);
+
+            console.log("Round 8 Begin");
+            playerDecision = prompt("Choose between rock paper or scissors").toUpperCase();
+            computerDescision = computerPlay();
+            round = singleRound(playerDecision,computerDescision);       
+            console.log(`Round 8 Results: ${round} Score: ${pScore}`);
+
+            console.log("Round 9 Begin");
+            playerDecision = prompt("Choose between rock paper or scissors").toUpperCase();
+            computerDescision = computerPlay();
+            round = singleRound(playerDecision,computerDescision);       
+            console.log(`Round 9 Results: ${round} Score: ${pScore}`);
+
+            console.log("Round 10 Begin");
+            playerDecision = prompt("Choose between rock paper or scissors").toUpperCase();
+            computerDescision = computerPlay();
+            round = singleRound(playerDecision,computerDescision);       
+            console.log(`Round 10 Results: ${round} Score: ${pScore}`);
+
 
         }
-        const playerSelection = "rock";
-        const computerSelection = computerPlay();
-        console.log(playRound(playerSelection, computerSelection));
+        gamePlay();
+            
+
 
 
          
